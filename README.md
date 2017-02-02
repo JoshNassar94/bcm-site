@@ -1,24 +1,5 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is my first attempt at using Ruby on Rails.
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+I will be making a new website for the UF BCM.
