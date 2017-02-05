@@ -7,7 +7,7 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">UF BCM</a>
+      <%= link_to "UF BCM", root_path, {:class => "navbar-brand"}%>
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -40,6 +40,7 @@
 
 
       <ul class="nav navbar-nav navbar-right">
+        <% if !@logged_in.nil? %>
         <li class="dropdown nav navbar-nav navbar-right">
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Info<span class="caret"></span></a>
           <ul class="dropdown-menu">
@@ -49,9 +50,12 @@
             <li role="separator" class="divider"></li>
             <li class="dropdown-header">Nav header</li>
             <li><a href="#">Separated link</a></li>
-            <li><a href="#">Logout</a></li>
+            <li><%= link_to "Logout", "/admin/logout"%></li>
           </ul>
         </li>
+        <% else %>
+        <li><%= link_to "Login", "/admin/login"%></li>
+        <% end %>
       </ul>
     </div><!--/.nav-collapse -->
   </div>
