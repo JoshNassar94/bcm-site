@@ -8,6 +8,20 @@ $orange-main: #FF9800;
 
 body {
   background-color: $blue-main;
+  color: white;
+}
+
+.footer {
+  background-color: grey;
+  text-align: center;
+}
+
+.footer a {
+  color: white;
+}
+
+.footer a:hover {
+  color: white;
 }
 
 .navbar {
@@ -27,19 +41,23 @@ body {
   font-size: 60px;
   vertical-align: middle;
   display: table-cell;
-  color: white;
 }
 
-.col-sm-4 {
+.icon-row {
   padding-top: 25px;
   text-align: center;
-  color: white;
 }
 
 p {
-  font-size: 16px;
+  font-size: 1.1em;
 }
 
 .dropdown:hover .dropdown-menu {
 display: block;
+}
+
+#upcoming-events {
+  font-family: 'Original Surfer', cursive;
+  color: white;
+  font-size: 3em;
 }
