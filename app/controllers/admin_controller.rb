@@ -14,7 +14,7 @@ protect_from_forgery with: :null_session
 
     if authorized_user
       session[:user_id] = authorized_user.id
-      redirect_to(root_path)
+      redirect_to('/admin/manage')
     else
       flash.now[:danger] = "Invalid username/password combination."
       render('login')
@@ -25,5 +25,9 @@ protect_from_forgery with: :null_session
     session[:user_id] = nil
     flash[:danger] = "Logged out"
     redirect_to("/admin/login")
+  end
+
+  def manage
+
   end
 end

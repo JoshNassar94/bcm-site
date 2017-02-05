@@ -40,21 +40,18 @@
 
 
       <ul class="nav navbar-nav navbar-right">
-        <% if !@logged_in.nil? %>
+        <% if !session[:user_id].nil? %>
         <li class="dropdown nav navbar-nav navbar-right">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Info<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Options<span class="caret"></span></a>
           <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
+            <li><a href="/admin/manage">Manage Content</a></li>
             <li role="separator" class="divider"></li>
-            <li class="dropdown-header">Nav header</li>
-            <li><a href="#">Separated link</a></li>
-            <li><%= link_to "Logout", "/admin/logout"%></li>
+            <li><a href="/admin/account-settings">Account Settings</a></li>
+            <li><a href="/admin/logout">Logout</a></li>
           </ul>
         </li>
         <% else %>
-        <li><%= link_to "Login", "/admin/login"%></li>
+        <li><a href="/admin/login">Login</a></li>
         <% end %>
       </ul>
     </div><!--/.nav-collapse -->
