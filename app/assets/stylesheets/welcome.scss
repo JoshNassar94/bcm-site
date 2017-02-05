@@ -1,3 +1,45 @@
 // Place all the styles related to the Welcome controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+$blue-main: #0288D1;
+$orange-main: #FF9800;
+
+body {
+  background-color: $blue-main;
+}
+
+.navbar {
+    margin-bottom: 0;
+}
+
+.glyphicon-ring {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  display: inline-table;
+  text-align: center;
+  background: $orange-main;
+}
+
+.glyphicon-ring .glyphicon-bordered {
+  font-size: 60px;
+  vertical-align: middle;
+  display: table-cell;
+  color: white;
+}
+
+.col-sm-4 {
+  padding-top: 25px;
+  text-align: center;
+  color: white;
+}
+
+p {
+  font-size: 16px;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
+}

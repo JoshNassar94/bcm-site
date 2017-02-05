@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>UF BCM</title>
+    <%= javascript_include_tag 'application' %>
+    <%= stylesheet_link_tag 'application' %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <nav class="navbar navbar-default navbar-static-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="#">UF BCM</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">About Us <span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Our Staff</a></li>
+                <li><a href="#">Our Mission</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Get Involved<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Gator</a></li>
+                <li><a href="#">Small Groups</a></li>
+                <li><a href="#">Bistro</a></li>
+                <li><a href="#">Events</a></li>
+              </ul>
+            </li>
+            <li class="dropdown">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Resources<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Alumni Newsletter</a></li>
+                <li><a href="#">Gator Notes</a></li>
+                <li><a href="#">Testimonies</a></li>
+                <li><a href="#">Leadership Application</a></li>
+              </ul>
+            </li>
+          </ul>
+
+
+          <ul class="nav navbar-nav navbar-right">
+            <li class="dropdown nav navbar-nav navbar-right">
+              <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Account Info<span class="caret"></span></a>
+              <ul class="dropdown-menu">
+                <li><a href="#">Action</a></li>
+                <li><a href="#">Another action</a></li>
+                <li><a href="#">Something else here</a></li>
+                <li role="separator" class="divider"></li>
+                <li class="dropdown-header">Nav header</li>
+                <li><a href="#">Separated link</a></li>
+                <li><a href="#">Logout</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
+    <%= yield %>
+  </body>
+</html>

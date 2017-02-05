@@ -1,2 +1,75 @@
-<h1>Welcome to the UF BCM's new website!</h1>
-<%= link_to "TEST", {:action => 'test', :id => 20} %>
+<!--Images in the carousel should be 6000x2700 pixels-->
+<div id="myCarousel" class="carousel slide" data-ride="carousel">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1" class=""></li>
+    <li data-target="#myCarousel" data-slide-to="2" class=""></li>
+  </ol>
+  <div class="carousel-inner" role="listbox">
+    <div class="item active">
+      <%= image_tag("1.png") %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Baptist Collegiate Ministries</h1>
+          <p>The UF BCM exists to connect students to a relationship with Christ.</p>
+        </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("2.png") %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Join Us For Gator</h1>
+          <p>Gator is our weekly worship service in our building every Tuesday at 8:00.</p>
+          </div>
+      </div>
+    </div>
+    <div class="item">
+      <%= image_tag("3.png") %>
+      <div class="container">
+        <div class="carousel-caption">
+          <h1>Get Involved</h1>
+          <p>We have all sorts of Bible studies and volunteer opportunities to get involved in! Contact us for more info.</p>
+          </div>
+      </div>
+    </div>
+  </div>
+  <a class="left carousel-control" href="#myCarousel" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+  </a>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-sm-4">
+      <div class="glyphicon-ring">
+        <span class="glyphicon glyphicon-home glyphicon-bordered"></span>
+      </div>
+      <p style="padding-top:10px;">The BCM partners with local churches in order to help students get connected. By finding a church home, students get the chance to connect with brothers and sisters in Christ of all ages, allowing them to grow in their relationships with Christ.
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <div class="glyphicon-ring">
+        <span class="glyphicon glyphicon-book glyphicon-bordered"></span>
+      </div>
+      <p style="padding-top:10px;">The BCM offers many opportunities for students to get involved in small groups. This includes specific groups for freshman, community groups for upper-classmen, as well as one-on-one discipleship.
+      </p>
+    </div>
+    <div class="col-sm-4">
+      <div class="glyphicon-ring">
+        <span class="glyphicon glyphicon-globe glyphicon-bordered"></span>
+      </div>
+      <p style="padding-top:10px;">The BCM cares deeply about helping others get to know Christ. This includes service projects around the community, setting up Gospel appointments with friends, and global mission trips.
+      </p>
+    </div>
+  </div>
+
+  <div class="event-area">
+
+  </div>
+  <%= link_to "TEST", {:action => 'test', :id => 20} %>
+</div>
