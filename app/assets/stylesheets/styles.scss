@@ -91,3 +91,22 @@ display: block;
 .admin-manage a:hover {
   color: white;
 }
+
+.carousel-overlay{
+	background-color: black;
+	width: 100%;
+	opacity: 0.5;
+	height: 100%;
+	position: absolute;
+	z-index: 15;
+}
+.carousel-control {
+  z-index:20;
+}
+ol {
+z-index: 20!important;
+position: absolute;
+}
+.carousel-caption {
+z-index: 20;
+}
