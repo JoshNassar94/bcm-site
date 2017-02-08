@@ -110,3 +110,9 @@ position: absolute;
 .carousel-caption {
 z-index: 20;
 }
+
+.main-page {
+  background-color: $blue-main;
+  z-index: 50;
+  position:relative;
+}
