@@ -16,14 +16,6 @@ body {
   text-align: center;
 }
 
-.footer a {
-  color: white;
-}
-
-.footer a:hover {
-  color: white;
-}
-
 .navbar {
     margin-bottom: 0;
 }
@@ -84,11 +76,11 @@ display: block;
   flex: 1;
 }
 
-.admin-manage a {
+a {
   color: white;
 }
 
-.admin-manage a:hover {
+a:hover {
   color: white;
 }
 
@@ -115,4 +107,9 @@ z-index: 20;
   background-color: $blue-main;
   z-index: 50;
   position:relative;
+}
+
+.weekly-gatherings a {
+  font-weight: bold;
+  text-decoration: underline;
 }

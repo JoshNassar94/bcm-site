@@ -1,2 +1,30 @@
-<h1>GetInvolved#weekly-gatherings</h1>
-<p>Find me in app/views/get_involved/weekly-gatherings.html.erb</p>
+<div class="container weekly-gatherings">
+  <div class="gator" style="padding:35px;">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag("gator.jpg", :alt => "Gator", :class => "img-responsive img-thumbnail") %>
+      </div>
+      <div class="col-sm-6">
+        <h1>Gator</h1>
+        <h3>Tuesdays 8:00 - 9:00</h3>
+        <p>Gator is an awesome mid-week worship service that you don’t want to miss! We kick off with our very own BCM Band leading us in worship. We then hear a relevant message from Eddie or sometimes a local campus minister. After the service, many students stay to hang out and play games! We even have
+        <%= link_to "livestreams", "https://www.facebook.com/pg/ufbcm/videos/?ref=page_internal" %>
+        and
+        <%= link_to "sermon notes", "/resources/sermon_notes" %>!</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="bistro" style="padding:35px;">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag("bistro.jpg", :alt => "Gator", :class => "img-responsive img-thumbnail") %>
+      </div>
+      <div class="col-sm-6">
+        <h1>Bistro</h1>
+        <h3>Thursdays 11:15 - 1:00</h3>
+        <p>Bistro is our weekly mealtime gathering. Take a break from your Ramen and PB&amp;Js and invite your friends to enjoy a home-cooked meal! We do this every Thursday from 11:15 to around 1. It only costs $5, but if you buy a Bistro Card, you can get 5 meals for $20.</p>
+      </div>
+    </div>
+  </div>
+</div>
