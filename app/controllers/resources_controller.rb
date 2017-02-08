@@ -2,12 +2,12 @@ class ResourcesController < ApplicationController
   def newsletter
   end
 
-  def sermon-notes
+  def sermon_notes
   end
 
   def testimonies
   end
 
-  def leadership-app
+  def leadership_app
   end
 end

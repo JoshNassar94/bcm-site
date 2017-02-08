@@ -1,13 +1,13 @@
 class AboutUsController < ApplicationController
-  def our-team
+  def our_team
   end
 
-  def our-mission
+  def our_mission
   end
 
   def faqs
   end
 
-  def social-media
+  def social_media
   end
 end
