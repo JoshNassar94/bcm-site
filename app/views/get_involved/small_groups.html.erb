@@ -1,28 +1,20 @@
 <div class="container">
   <div class="row">
-
-    <% if @small_groups %>
+    <% if @small_groups.present? %>
       <% @small_groups.each do |sm| %>
         <div class="col-lg-4 col-sm-6 small-group-cards">
-
-
           <div class="panel panel-default">
             <% if sm.imageName && sm.imageData %>
               <img src="<%=url_for(:controller => 'get_involved', :action => 'show_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
             <% end %>
-
             <div class="panel-heading">
-              <h3>
-                <%=sm.leader1%> &amp; <%=sm.leader2%>
-              </h3>
-
+              <h3> <%=sm.leader1%> &amp; <%=sm.leader2%> </h3>
               <h5><%=sm.group_type%> | <%=sm.day=%> | <%=sm.time%> | <%=sm.location%></h5>
             </div>
             <div class="panel-body">
               <p><%=sm.description=%></p>
             </div>
           </div>
-
         </div>
       <% end %>
     <% else %>
