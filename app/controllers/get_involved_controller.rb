@@ -6,7 +6,7 @@ class GetInvolvedController < ApplicationController
   end
 
   def small_groups
-    @small_groups = SmallGroup.order(:day)
+    @small_groups = SmallGroup.order(:group_type)
   end
 
   def local_churches
