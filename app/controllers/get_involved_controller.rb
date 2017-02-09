@@ -6,8 +6,14 @@ class GetInvolvedController < ApplicationController
   end
 
   def small_groups
+    @small_groups = SmallGroup.order(:day)
   end
 
   def local_churches
+  end
+
+  def show_image
+    @small_group = SmallGroup.find(params[:id])
+    send_data(@small_group.imageData, filename: @small_group.imageName, disposition: "inline")
   end
 end

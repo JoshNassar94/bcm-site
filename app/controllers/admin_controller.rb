@@ -30,4 +30,25 @@ protect_from_forgery with: :null_session
   def manage
 
   end
+
+  def small_groups
+    @small_group = SmallGroup.new
+  end
+
+  def add_small_group
+    @small_group = SmallGroup.new(small_group_params)
+
+    if @small_group.save
+      redirect_to("/admin/manage")
+    else
+      render('small_groups')
+    end
+
+  end
+
+  private
+
+  def small_group_params
+    params.require(:small_group).permit(:leader1, :leader2, :group_type, :description, :location, :day, :time, :image, :uploaded_file)
+  end
 end

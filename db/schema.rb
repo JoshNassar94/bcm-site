@@ -10,10 +10,24 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170205050312) do
+ActiveRecord::Schema.define(version: 20170209020622) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "small_groups", force: :cascade do |t|
+    t.string   "leader1"
+    t.string   "leader2"
+    t.string   "group_type"
+    t.text     "description"
+    t.string   "location"
+    t.string   "day"
+    t.string   "time"
+    t.binary   "imageData"
+    t.string   "imageName"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "first_name"

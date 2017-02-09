@@ -114,8 +114,16 @@ z-index: 20;
   text-decoration: underline;
 }
 
+.weekly-gatherings a:hover {
+  color: $orange-main;
+}
+
 .bible-verse {
   color: black;
   padding: 30px;
   font-style: italic;
+}
+
+.add-small-group-form {
+  padding-bottom: 30px;
 }

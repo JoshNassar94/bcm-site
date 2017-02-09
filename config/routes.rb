@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'get_involved/weekly_gatherings'
   get 'get_involved/small_groups'
   get 'get_involved/local_churches'
+  get 'get_involved/show_image'
 
   get 'resources/newsletter'
   get 'resources/sermon_notes'
@@ -24,6 +25,8 @@ Rails.application.routes.draw do
   get 'admin/login'
   get 'admin/logout'
   get 'admin/manage'
+  get 'admin/small_groups'
+  post 'admin/add_small_group'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

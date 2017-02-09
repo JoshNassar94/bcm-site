@@ -1,0 +1,50 @@
+<div class="container add-small-group-form">
+  <h1>Add Small Group</h1>
+
+  <%= form_for@small_group, url: "/admin/add_small_group", html: {method: :post} do |f| %>
+    <div class="form-group">
+      <label for="leader1">Leaders</label>
+      <%= f.text_field(:leader1, class: "form-control", id: "leader1", placeholder: "Ex. Eddie Gilley")%><br>
+      <%= f.text_field(:leader2, class: "form-control", id: "leader2", placeholder: "Ex. Lica Gilley")%>
+    </div>
+
+    <div class="form-group">
+        <!--Dropdown group type-->
+        <label for="group_type">Type of Group</label>
+        <%= f.select(:group_type, ['Community Group', 'Fish School'], {}, {class: "form-control", id: "group_type"}) %>
+    </div>
+
+    <div class="form-group">
+        <!--Text area desc-->
+        <label for="description">Group Description</label>
+        <%= f.text_area(:description, class: "form-control", id:"description", rows: "6", placeholder: "Write a quick paragraph explaining who the leaders are, what the goal of the group is, what they're excited about, etc.") %>
+    </div>
+
+    <div class="form-group">
+        <!--Text field location-->
+        <label for="location">Location</label>
+        <%= f.text_field(:location, class: "form-control", id: "location", placeholder: "Ex. The Shrieking Shack")%>
+    </div>
+
+    <div class="form-group">
+        <!--Dropdown day-->
+        <label for="day">Day of the Week</label>
+        <%= f.select(:day, ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'], {}, {class: "form-control", id: "day"}) %>
+    </div>
+
+    <div class="form-group">
+        <!--Text field time-->
+        <label for="time">Time of Day</label>
+        <%= f.text_field(:time, class: "form-control", id: "time", placeholder: "Ex. 4:30 pm")%>
+    </div>
+
+    <div class="form-group">
+        <!--Image-->
+        <label>Picture</label>
+        <%= f.file_field("uploaded_file") %>
+        <small id="imageHelp" class="form-text">JPG, PNG, GIF</small>
+    </div>
+
+    <%= f.submit("Add Small Group", class: "btn btn-default pull-right") %>
+  <% end %>
+</div>

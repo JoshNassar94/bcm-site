@@ -1,2 +1,16 @@
-<h1>GetInvolved#small-groups</h1>
-<p>Find me in app/views/get_involved/small-groups.html.erb</p>
+<div class="container">
+  <% @small_groups.each do |sm| %>
+    <h3><%=sm.leader1%></h3>
+    <h3><%=sm.leader2%></h3>
+    <h3><%=sm.group_type%></h3>
+    <h3><%=sm.description%></h3>
+    <h3><%=sm.location%></h3>
+    <h3><%=sm.day%></h3>
+    <h3><%=sm.time%></h3>
+    <h3><%=sm.created_at%></h3>
+    <h3><%=sm.updated_at%></h3>
+    <% if sm.imageName && sm.imageData %>
+    <img src="<%=url_for(:controller => 'get_involved', :action => 'show_image', :id => sm.id)%>" class="img img-responsive"/>
+    <% end %>
+  <% end %>
+</div>
