@@ -134,3 +134,11 @@ z-index: 20;
 .modal-content {
   color: black;
 }
+
+.church-link {
+  color: $orange-main;
+}
+
+.church-link:hover {
+  color: $blue-main;
+}

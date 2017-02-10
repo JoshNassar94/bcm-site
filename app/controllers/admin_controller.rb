@@ -160,6 +160,52 @@ protect_from_forgery with: :null_session
 
 
 
+
+
+  def churches
+    authenticate_user
+    @church = Church.new
+  end
+
+  def add_church
+    authenticate_user
+    @church = Church.new(church_params)
+
+    if @church.save
+      redirect_to("/get_involved/local_churches")
+    else
+      render("churches")
+    end
+  end
+
+  def edit_church
+    authenticate_user
+    @church = Church.find(params[:id])
+  end
+
+  def update_church
+    authenticate_user
+    @church = Church.find(params[:id])
+
+    if @church.update_attributes(church_params)
+      redirect_to("/get_involved/local_churches")
+    else
+      render("edit_church")
+    end
+  end
+
+  def destroy_church
+    authenticate_user
+    @church = Church.find(params[:id])
+    @church.destroy
+    redirect_to("/get_involved/local_churches")
+  end
+
+
+
+
+
+
   private
 
   def small_group_params
@@ -172,6 +218,10 @@ protect_from_forgery with: :null_session
 
   def staff_params
     params.require(:staff_member).permit(:name, :bio, :image, :uploaded_file)
+  end
+
+  def church_params
+    params.require(:church).permit(:name, :description, :address, :website)
   end
 
   def authenticate_user

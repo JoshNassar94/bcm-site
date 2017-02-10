@@ -11,6 +11,7 @@ class GetInvolvedController < ApplicationController
   end
 
   def local_churches
+    @churches = Church.order(:id)
   end
 
   def show_image

@@ -44,6 +44,12 @@ Rails.application.routes.draw do
   patch 'admin/update_staff'
   delete 'admin/destroy_staff'
 
+  get 'admin/churches'
+  post 'admin/add_church'
+  get 'admin/edit_church'
+  patch 'admin/update_church'
+  delete 'admin/destroy_church'
+
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
