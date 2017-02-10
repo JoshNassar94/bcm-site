@@ -31,6 +31,10 @@ protect_from_forgery with: :null_session
     authenticate_user
   end
 
+  def admin_users
+    @users = User.order(:id)
+  end
+
   def small_groups
     authenticate_user
     @small_group = SmallGroup.new
@@ -205,6 +209,46 @@ protect_from_forgery with: :null_session
 
 
 
+  def user
+    @user = User.new
+  end
+
+  def add_user
+    authenticate_user
+    @user = User.new(user_params)
+
+    if @user.save
+      redirect_to("/admin/admin_users")
+    else
+      render("user")
+    end
+  end
+
+  def edit_user
+    authenticate_user
+    @user = User.find(params[:id])
+  end
+
+  def update_user
+    authenticate_user
+    @user = User.find(params[:id])
+
+    if @user.update_attributes(user_params)
+      redirect_to("/admin/admin_users")
+    else
+      render("edit_user")
+    end
+  end
+
+  def destroy_user
+    authenticate_user
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to("/admin/admin_users")
+  end
+
+
+
 
   private
 
@@ -222,6 +266,10 @@ protect_from_forgery with: :null_session
 
   def church_params
     params.require(:church).permit(:name, :description, :address, :website)
+  end
+
+  def user_params
+    params.require(:user).permit(:first_name, :last_name, :username, :email, :password, :password_confirmation)
   end
 
   def authenticate_user
