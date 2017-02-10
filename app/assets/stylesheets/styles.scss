@@ -132,3 +132,17 @@ z-index: 20;
   padding: 35px;
   color: black;
 }
+
+.admin-section a {
+  color: grey;
+}
+.admin-section a:hover {
+  text-decoration: none;
+  color: $orange-main;
+  cursor: pointer;
+  cursor: hand;
+}
+
+.modal-content {
+  color: black;
+}

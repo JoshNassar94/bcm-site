@@ -1,4 +1,9 @@
 <div class="container">
+
+  <h1>Small Groups</h1>
+  <p>The BCM offers weekly small groups for all types of students. Fish Schools are Bible Studies for freshmen led by two Sophomores, meant to model a "family" during your first year of college. Community Groups are our bible studies for upper-classmen and often meet in our students' homes. Both types of small groups are great ways to get involved; you are certain to make some fast friends and grow closer to God in either type.</p>
+  <p>Meet our small group leaders below!</p>
+
   <div class="row">
     <% if @small_groups.present? %>
       <% @small_groups.each do |sm| %>
@@ -10,6 +15,16 @@
             <div class="panel-heading">
               <h3> <%=sm.leader1%> &amp; <%=sm.leader2%> </h3>
               <h5><%=sm.group_type%> | <%=sm.day=%> | <%=sm.time%> | <%=sm.location%></h5>
+
+              <div class="admin-section row">
+                <hr>
+                <div class="col-xs-2 col-xs-offset-8 h3">
+                  <%= link_to "", "/admin/edit_small_group?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
+                </div>
+                <div class="col-xs-2 h3">
+                  <%= link_to "", "/admin/destroy_small_group?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
+                </div>
+              </div>
             </div>
             <div class="panel-body">
               <p><%=sm.description=%></p>

@@ -27,6 +27,9 @@ Rails.application.routes.draw do
   get 'admin/manage'
   get 'admin/small_groups'
   post 'admin/add_small_group'
+  get 'admin/edit_small_group'
+  patch 'admin/update_small_group'
+  delete 'admin/destroy_small_group'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
