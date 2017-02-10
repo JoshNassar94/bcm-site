@@ -118,6 +118,48 @@ protect_from_forgery with: :null_session
 
 
 
+  def staff
+    authenticate_user
+    @staff = StaffMember.new
+  end
+
+  def add_staff
+    authenticate_user
+    @staff = StaffMember.new(staff_params)
+
+    if @staff.save
+      redirect_to("/about_us/our_team")
+    else
+      render("staff")
+    end
+  end
+
+  def edit_staff
+    authenticate_user
+    @staff = StaffMember.find(params[:id])
+  end
+
+  def update_staff
+    authenticate_user
+    @staff = StaffMember.find(params[:id])
+
+    if @staff.update_attributes(staff_params)
+      redirect_to("/about_us/our_team")
+    else
+      render("edit_staff")
+    end
+  end
+
+  def destroy_staff
+    authenticate_user
+    @staff = StaffMember.find(params[:id])
+    @staff.destroy
+    redirect_to("/about_us/our_team")
+  end
+
+
+
+
   private
 
   def small_group_params
@@ -126,6 +168,10 @@ protect_from_forgery with: :null_session
 
   def event_params
     params.require(:event).permit(:title, :description, :location, :event_date, :image, :uploaded_file)
+  end
+
+  def staff_params
+    params.require(:staff_member).permit(:name, :bio, :image, :uploaded_file)
   end
 
   def authenticate_user

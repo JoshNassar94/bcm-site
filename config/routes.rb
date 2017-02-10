@@ -25,16 +25,24 @@ Rails.application.routes.draw do
   get 'admin/login'
   get 'admin/logout'
   get 'admin/manage'
+
   get 'admin/small_groups'
   post 'admin/add_small_group'
   get 'admin/edit_small_group'
   patch 'admin/update_small_group'
   delete 'admin/destroy_small_group'
+
   get 'admin/events'
   post 'admin/add_event'
   get 'admin/edit_event'
   patch 'admin/update_event'
   delete 'admin/destroy_event'
+
+  get 'admin/staff'
+  post 'admin/add_staff'
+  get 'admin/edit_staff'
+  patch 'admin/update_staff'
+  delete 'admin/destroy_staff'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
