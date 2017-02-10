@@ -16,6 +16,7 @@
               <h3> <%=sm.leader1%> &amp; <%=sm.leader2%> </h3>
               <h5><%=sm.group_type%> | <%=sm.day=%> | <%=sm.time%> | <%=sm.location%></h5>
 
+              <% if session[:user_id].present? %>
               <div class="admin-section row">
                 <hr>
                 <div class="col-xs-2 col-xs-offset-8 h3">
@@ -25,6 +26,7 @@
                   <%= link_to "", "/admin/destroy_small_group?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
                 </div>
               </div>
+              <% end %>
             </div>
             <div class="panel-body">
               <p><%=sm.description=%></p>

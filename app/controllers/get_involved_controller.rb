@@ -1,5 +1,6 @@
 class GetInvolvedController < ApplicationController
   def upcoming_events
+    @events = Event.order(:event_date)
   end
 
   def weekly_gatherings

@@ -30,6 +30,11 @@ Rails.application.routes.draw do
   get 'admin/edit_small_group'
   patch 'admin/update_small_group'
   delete 'admin/destroy_small_group'
+  get 'admin/events'
+  post 'admin/add_event'
+  get 'admin/edit_event'
+  patch 'admin/update_event'
+  delete 'admin/destroy_event'
 
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

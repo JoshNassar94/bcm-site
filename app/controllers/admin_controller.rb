@@ -41,17 +41,19 @@ protect_from_forgery with: :null_session
     @small_group = SmallGroup.new(small_group_params)
 
     if @small_group.save
-      redirect_to("/admin/manage")
+      redirect_to("/get_involved/small_groups")
     else
       render("small_groups")
     end
   end
 
   def edit_small_group
+    authenticate_user
     @small_group = SmallGroup.find(params[:id])
   end
 
   def update_small_group
+    authenticate_user
     @small_group = SmallGroup.find(params[:id])
 
     if @small_group.update_attributes(small_group_params)
@@ -62,10 +64,59 @@ protect_from_forgery with: :null_session
   end
 
   def destroy_small_group
+    authenticate_user
     @small_group = SmallGroup.find(params[:id])
     @small_group.destroy
     redirect_to("/get_involved/small_groups")
   end
+
+
+
+
+
+
+  def events
+    authenticate_user
+    @event = Event.new
+  end
+
+  def add_event
+    authenticate_user
+    @event = Event.new(event_params)
+
+    if @event.save
+      redirect_to("/get_involved/upcoming_events")
+    else
+      render("events")
+    end
+  end
+
+  def edit_event
+    authenticate_user
+    @event = Event.find(params[:id])
+  end
+
+  def update_event
+    authenticate_user
+    @event = Event.find(params[:id])
+
+    if @event.update_attributes(event_params)
+      redirect_to("/get_involved/upcoming_events")
+    else
+      render("edit_event")
+    end
+  end
+
+  def destroy_event
+    authenticate_user
+    @event = Event.find(params[:id])
+    @event.destroy
+    redirect_to("/get_involved/upcoming_events")
+  end
+
+
+
+
 
   private
 
@@ -73,10 +124,12 @@ protect_from_forgery with: :null_session
     params.require(:small_group).permit(:leader1, :leader2, :group_type, :description, :location, :day, :time, :image, :uploaded_file)
   end
 
+  def event_params
+    params.require(:event).permit(:title, :description, :location, :event_date, :image, :uploaded_file)
+  end
+
   def authenticate_user
-    if session[:user_id].present?
-      render('manage')
-    else
+    if !session[:user_id].present?
       redirect_to('/admin/login')
     end
   end

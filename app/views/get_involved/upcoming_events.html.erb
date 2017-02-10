@@ -1,2 +1,46 @@
-<h1>GetInvolved#upcoming-events</h1>
-<p>Find me in app/views/get_involved/upcoming-events.html.erb</p>
+<div class="container">
+
+  <h1>Upcoming Events</h1>
+  <p>The BCM holds all kinds of events throughout the year, ranging from free feasts to dodgeball tournaments! These events are great opportunities to invite your other friends to the BCM, or to get connected with some new people within our organization. Most events are free, or close to it, so try to come out to as many as you can. We promise you'll have a blast!</p>
+
+  <div class="row">
+    <% if @events.present? %>
+      <% @events.each do |sm| %>
+        <div class="col-lg-4 col-sm-6 small-group-cards">
+          <div class="panel panel-default">
+            <% if sm.imageName && sm.imageData %>
+              <img src="<%=url_for(:controller => 'get_involved', :action => 'show_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
+            <% end %>
+            <div class="panel-heading">
+              <h3> <%=sm.title%></h3>
+              <h5><%=sm.event_date.to_date.strftime("%A, %B %d - %I:%M")%></h5>
+              <h5><%=sm.location%></h5>
+
+              <% if session[:user_id].present? %>
+              <div class="admin-section row">
+                <hr>
+                <div class="col-xs-2 col-xs-offset-8 h3">
+                  <%= link_to "", "/admin/edit_event?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
+                </div>
+                <div class="col-xs-2 h3">
+                  <%= link_to "", "/admin/destroy_event?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
+                </div>
+              </div>
+              <% end %>
+            </div>
+            <div class="panel-body">
+              <p><%=sm.description=%></p>
+            </div>
+          </div>
+        </div>
+      <% end %>
+    <% else %>
+      <h1 style="padding-top: 35px;">No events have been posted recently.</h1>
+      <h3>Make sure to check out our
+        <a href="/get_involved/small_groups" style="font-weight: bold;" target="_blank">small groups</a>
+        and our
+        <a href="/get_involved/weekly_gatherings" style="font-weight: bold;" target="_blank">weekly events</a>!
+      </h3>
+    <% end %>
+  </div>
+</div>
