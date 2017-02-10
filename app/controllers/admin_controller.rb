@@ -14,6 +14,7 @@ protect_from_forgery with: :null_session
 
     if authorized_user
       session[:user_id] = authorized_user.id
+      session[:name] = authorized_user.first_name
       redirect_to('/admin/manage')
     else
       flash.now[:danger] = "Invalid username/password combination."
@@ -214,7 +215,6 @@ protect_from_forgery with: :null_session
   end
 
   def add_user
-    authenticate_user
     @user = User.new(user_params)
 
     if @user.save

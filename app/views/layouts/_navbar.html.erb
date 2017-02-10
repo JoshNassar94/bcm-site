@@ -43,12 +43,12 @@
       <ul class="nav navbar-nav navbar-right">
         <% if !session[:user_id].nil? %>
         <li class="dropdown nav navbar-nav navbar-right">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Admin Options<span class="caret"></span></a>
+          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=session[:name]%><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/admin/manage">Manage Content</a></li>
             <li><a href="/admin/admin_users">Admin Users</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="/admin/account-settings">Account Settings</a></li>
+            <li><%= link_to "Account Settings", "/admin/edit_user?id="+session[:user_id].to_s%></li>
             <li><a href="/admin/logout">Logout</a></li>
           </ul>
         </li>
