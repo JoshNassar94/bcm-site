@@ -7,7 +7,4 @@ class ResourcesController < ApplicationController
 
   def testimonies
   end
-
-  def leadership_app
-  end
 end

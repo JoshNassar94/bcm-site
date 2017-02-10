@@ -13,7 +13,6 @@ Rails.application.routes.draw do
   get 'resources/newsletter'
   get 'resources/sermon_notes'
   get 'resources/testimonies'
-  get 'resources/leadership_app'
 
   get 'about_us/our_team'
   get 'about_us/our_mission'
