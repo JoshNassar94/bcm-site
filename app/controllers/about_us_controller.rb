@@ -5,4 +5,7 @@ class AboutUsController < ApplicationController
 
   def our_mission
   end
+
+  def contact
+  end
 end

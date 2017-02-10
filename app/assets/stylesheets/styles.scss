@@ -64,12 +64,19 @@ display: block;
   flex: 1;
 }
 
+.navbar a {
+  font-weight: normal;
+  text-decoration: none;
+}
+
 a {
   color: white;
+  font-weight: bold;
+  text-decoration: underline;
 }
 
 a:hover {
-  color: white;
+  color: $orange-main;
 }
 
 .carousel-overlay{
@@ -97,15 +104,6 @@ z-index: 20;
   position:relative;
 }
 
-.weekly-gatherings a {
-  font-weight: bold;
-  text-decoration: underline;
-}
-
-.weekly-gatherings a:hover {
-  color: $orange-main;
-}
-
 .bible-verse {
   color: black;
   padding: 30px;
@@ -126,7 +124,6 @@ z-index: 20;
 }
 .admin-section a:hover {
   text-decoration: none;
-  color: $orange-main;
   cursor: pointer;
   cursor: hand;
 }

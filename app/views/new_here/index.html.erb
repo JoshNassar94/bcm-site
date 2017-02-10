@@ -1,2 +1,60 @@
-<h1>NewHere#index</h1>
-<p>Find me in app/views/new_here/index.html.erb</p>
+<div class="container">
+  <h1>What You Need to Know</h1>
+  <p>We know that college is a difficult and confusing time of life, and can be more so if you're trying to figure out what organizations to join! That's why we created this page. Nobody wants to walk into a new place feeling like the odd man out, so below you will find some helpful information to help make your first visit to the BCM a great one. We hope that it is helpful and that we see you at one of our events soon!</p>
+  <p>If this page doesn't answer your question, feel free to call us at (352) 376-4405, or email us at <a href="mailto:ufbcm@ufbcm.org" target="_top">ufbcm@ufbcm.org</a>. A member of our <a href="/about_us/our_team">staff</a> will get in contact with you very shortly!</p>
+
+  <div class="row">
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-users glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;">The BCM offers many opportunities for students to get involved in <%=link_to "small groups", "/get_involved/small_groups"%>. This includes specific groups called Fish Schools for freshman, community groups for upper-classmen, as well as one-on-one discipleship.
+      </p>
+    </div>
+
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-book glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;">Our weekly <%=link_to "worship service", "/get_involved/weekly_gatherings"%>, Gator, is every Tuesday night at 8:00 in our building! These services feature worship led by our band, a great message from Eddie or a visiting pastor, and lots of hanging out afterwards!
+      </p>
+    </div>
+
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-cutlery glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;"><%=link_to "Bistro", "/get_involved/weekly_gatherings"%> is our mid-week, home-cooked meal! We know students get tired of eating PB&amp;J's and Ramen, so this is the perfect solution! For only $5, you get an all-you-can-eat home-cooked meal, and a chance to hang out with friends! Runs from 11:15 to 1:00.
+      </p>
+    </div>
+
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-map-marker glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;">The BCM is lucky enough to have our own bulding to call home! We are located on University Avenue, right across the street from Library West. It's a great place to hang out during the week, complete with a study room, couch room for napping and movies, and a game room!
+      </p>
+    </div>
+
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-car glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;">As you probably know, parking is hard to come by in Gainesville! We've got a few spots that are available after 5:00 behind our building, plus we rent out the nearby lots for Tuesday night Gator, starting at 7:30pm!
+      </p>
+    </div>
+
+    <div class="col-md-4 col-sm-6 icon-row">
+      <div class="glyphicon-ring">
+        <i class="fa fa-calendar glyphicon-bordered" aria-hidden="true"></i>
+      </div>
+      <p style="padding-top:10px;">In addition to our small groups and worship service, we also host tons of <%=link_to "great events", "/get_involved/upcoming_events"%> throughout the year. These range from free feasts to lake days to formal banquets! Keep an eye on the calendar for your favorite upcoming events!
+      </p>
+    </div>
+
+    <div class="col-xs-6 col-xs-offset-3" style="padding: 50px 0px;">
+      <%= image_tag("map.jpg", :class => "img img-responsive img-thumbnail", :alt=>"Map of BCM and surrounding parking") %>
+      <p style="text-align:center;">BCM and Surrounding Parking</p>
+    </div>
+  </div>
+</div>
