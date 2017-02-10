@@ -4,10 +4,15 @@
 
 
 $blue-main: #0288D1;
+$blue-secondary: #4bbefc;
 $orange-main: #FF9800;
 
 body {
-  background-color: $blue-main;
+  background: $blue-main;
+  background: -webkit-linear-gradient($blue-main, $blue-secondary);
+  background: -o-linear-gradient($blue-main, $blue-secondary);
+  background: -moz-linear-gradient($blue-main, $blue-secondary);
+  background: linear-gradient($blue-main, $blue-secondary);
   color: white;
 }
 
@@ -99,7 +104,11 @@ z-index: 20;
 }
 
 .main-page {
-  background-color: $blue-main;
+  background: $blue-main;
+  background: -webkit-linear-gradient($blue-main, $blue-secondary);
+  background: -o-linear-gradient($blue-main, $blue-secondary);
+  background: -moz-linear-gradient($blue-main, $blue-secondary);
+  background: linear-gradient($blue-main, $blue-secondary);
   z-index: 50;
   position:relative;
 }
