@@ -2,7 +2,7 @@ Rails.application.routes.draw do
 
   root 'welcome#index'
 
-  get 'new_here/index'
+  get 'new_here', to: 'new_here#index'
 
   get 'get_involved/upcoming_events'
   get 'get_involved/weekly_gatherings'
@@ -17,9 +17,6 @@ Rails.application.routes.draw do
 
   get 'about_us/our_team'
   get 'about_us/our_mission'
-  get 'about_us/faqs'
-  get 'about_us/social_media'
-
 
   post 'admin/attempt_login'
   get 'admin/login'
