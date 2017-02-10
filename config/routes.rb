@@ -8,7 +8,9 @@ Rails.application.routes.draw do
   get 'get_involved/weekly_gatherings'
   get 'get_involved/small_groups'
   get 'get_involved/local_churches'
-  get 'get_involved/show_image'
+  get 'get_involved/show_staff_image'
+  get 'get_involved/show_small_group_image'
+  get 'get_involved/show_event_image'
 
   get 'resources/newsletter'
   get 'resources/sermon_notes'

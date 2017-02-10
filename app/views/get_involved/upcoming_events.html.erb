@@ -9,7 +9,7 @@
         <div class="col-lg-4 col-sm-6 small-group-cards">
           <div class="panel panel-default">
             <% if sm.imageName && sm.imageData %>
-              <img src="<%=url_for(:controller => 'get_involved', :action => 'show_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
+              <img src="<%=url_for(:controller => 'get_involved', :action => 'show_event_image', :id => sm.id)%>" class="img img-responsive" alt="Event Picture" style="width: 100%;"/>
             <% end %>
             <div class="panel-heading">
               <h3> <%=sm.title%></h3>
