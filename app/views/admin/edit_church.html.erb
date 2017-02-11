@@ -2,6 +2,7 @@
     <h1>Update Local Church</h1>
 
     <%= form_for@church, url: "/admin/update_church?id="+@church.id.to_s, html: {method: :patch} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">

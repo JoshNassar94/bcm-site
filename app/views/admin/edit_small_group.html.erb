@@ -2,6 +2,7 @@
     <h1>Edit Small Group</h1>
 
     <%= form_for@small_group, url: "/admin/update_small_group?id="+@small_group.id.to_s, html: {method: :patch} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">

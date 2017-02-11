@@ -2,6 +2,7 @@
     <h1>Update Staff Member</h1>
 
     <%= form_for @staff, url: "/admin/update_staff?id="+@staff.id.to_s, html: {method: :patch} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">

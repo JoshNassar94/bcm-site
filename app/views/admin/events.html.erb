@@ -2,6 +2,7 @@
     <h1>Create an Event</h1>
 
     <%= form_for @event, url: "/admin/add_event", html: {method: :post} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">

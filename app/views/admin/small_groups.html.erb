@@ -2,6 +2,7 @@
     <h1>Add Small Group</h1>
 
     <%= form_for@small_group, url: "/admin/add_small_group", html: {method: :post} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">

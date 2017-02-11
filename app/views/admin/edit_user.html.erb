@@ -2,6 +2,7 @@
     <h1>Edit Admin User</h1>
 
     <%= form_for@user, url: "/admin/update_user?id="+@user.id.to_s, html: {method: :patch} do |f| %>
+    <%= error_messages_for(f.object) %>
     <div class="row">
         <div class=" col-xs-6 col-xs-offset-3 panel">
             <div style="padding: 15px; color: black;">
@@ -28,6 +29,7 @@
                 <div class="form-group">
                     <label for="password">Password</label>
                     <%= f.password_field(:password, class: "form-control", id: "password", placeholder: "Password")%>
+                    <small class="form-text text-muted">Must be between 6-40 characters.</small>
                 </div>
 
                 <div class="form-group">
