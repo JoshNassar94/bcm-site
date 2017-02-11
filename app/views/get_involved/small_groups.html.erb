@@ -1,10 +1,10 @@
-<div class="container-fluid">
+<div class="container">
 
   <h1>Small Groups</h1>
   <p>The BCM offers weekly small groups for all types of students. Fish Schools are Bible Studies for freshmen led by two Sophomores, meant to model a "family" during your first year of college. Community Groups are our bible studies for upper-classmen and often meet in our students' homes. Both types of small groups are great ways to get involved; you are certain to make some fast friends and grow closer to God in either type.</p>
   <p>Meet our small group leaders below!</p>
 
-  <div class="row">
+  <div class="row match-my-cols">
     <% if @small_groups.present? %>
       <% @small_groups.each do |sm| %>
         <div class="col-lg-4 col-sm-6 small-group-cards">
