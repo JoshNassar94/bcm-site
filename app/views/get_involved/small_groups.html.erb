@@ -1,4 +1,4 @@
-<div class="container">
+<div class="container-fluid">
 
   <h1>Small Groups</h1>
   <p>The BCM offers weekly small groups for all types of students. Fish Schools are Bible Studies for freshmen led by two Sophomores, meant to model a "family" during your first year of college. Community Groups are our bible studies for upper-classmen and often meet in our students' homes. Both types of small groups are great ways to get involved; you are certain to make some fast friends and grow closer to God in either type.</p>
@@ -7,7 +7,7 @@
   <div class="row">
     <% if @small_groups.present? %>
       <% @small_groups.each do |sm| %>
-        <div class="col-lg-4 col-sm-6 small-group-cards" style="padding-bottom:30px;">
+        <div class="col-lg-4 col-sm-6 small-group-cards">
           <div class="panel panel-default">
             <% if sm.imageName && sm.imageData %>
               <img src="<%=url_for(:controller => 'get_involved', :action => 'show_small_group_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
