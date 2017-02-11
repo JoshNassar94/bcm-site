@@ -215,10 +215,12 @@ protect_from_forgery with: :null_session
 
 
   def user
+    authenticate_user
     @user = User.new
   end
 
   def add_user
+    authenticate_user
     @user = User.new(user_params)
 
     if @user.save
