@@ -9,7 +9,7 @@
       </button>
       <a href="/" class="navbar-left">
         <%= image_tag("logo.ico", :class => "img logo") %>
-      </a>
+      </a>\
     </div>
     <div id="navbar" class="navbar-collapse collapse">
       <ul class="nav navbar-nav">
@@ -48,7 +48,7 @@
           <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%=session[:name]%><span class="caret"></span></a>
           <ul class="dropdown-menu">
             <li><a href="/admin/manage">Manage Content</a></li>
-            <li><a href="/admin/admin_users">Admin Users</a></li>
+            <li><a href="/admin/admin_users">Manage Admins</a></li>
             <li role="separator" class="divider"></li>
             <li><%= link_to "Account Settings", "/admin/edit_user?id="+session[:user_id].to_s%></li>
             <li><a href="/admin/logout">Logout</a></li>

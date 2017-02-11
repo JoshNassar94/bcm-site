@@ -1,13 +1,15 @@
 <div class="container" style="padding-top: 50px;">
   <div class="row">
     <div class=" col-xs-6 col-xs-offset-3 panel">
-      <div class="my-form" style="padding: 15px;">
+      <div class="my-form" style="padding: 15px; color:black;">
         <%= form_tag("/admin/attempt_login", :method => :post) do %>
           <div class="form-group">
-            Username: <%= text_field_tag(:username, params[:username], class: "form-control")%>
+            <label for="username">Username</label>
+            <%= text_field_tag(:username, params[:username], class: "form-control", id: "username")%>
           </div>
           <div class="form-group">
-            Password: <%= password_field_tag(:password, nil, class: "form-control")%>
+            <label for="password">Password</label>
+            <%= password_field_tag(:password, nil, class: "form-control", id: "password")%>
           </div>
           <%= submit_tag("Log In", class: "btn btn-primary") %>
         <% end %>

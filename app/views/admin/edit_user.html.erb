@@ -1,37 +1,43 @@
 <div class="container add-small-group-form">
-  <h1>Edit Admin User</h1>
+    <h1>Edit Admin User</h1>
 
-  <%= form_for@user, url: "/admin/update_user?id="+@user.id.to_s, html: {method: :patch} do |f| %>
-    <div class="form-group">
-      <label for="first">First Name</label>
-      <%= f.text_field(:first_name, class: "form-control", id: "first", placeholder: "Ex. Eddie")%>
+    <%= form_for@user, url: "/admin/update_user?id="+@user.id.to_s, html: {method: :patch} do |f| %>
+    <div class="row">
+        <div class=" col-xs-6 col-xs-offset-3 panel">
+            <div style="padding: 15px; color: black;">
+                <div class="form-group">
+                    <label for="first">First Name</label>
+                    <%= f.text_field(:first_name, class: "form-control", id: "first", placeholder: "Ex. Eddie")%>
+                </div>
+
+                <div class="form-group">
+                    <label for="last">Last Name</label>
+                    <%= f.text_field(:last_name, class: "form-control", id: "last", placeholder: "Ex. Gilley")%>
+                </div>
+
+                <div class="form-group">
+                    <label for="username">Username</label>
+                    <%= f.text_field(:username, class: "form-control", id: "username", placeholder: "Ex. EGilley1")%>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <%= f.text_field(:email, class: "form-control", id: "email", placeholder: "Ex. egilley@gmail.com")%>
+                </div>
+
+                <div class="form-group">
+                    <label for="password">Password</label>
+                    <%= f.password_field(:password, class: "form-control", id: "password", placeholder: "Password")%>
+                </div>
+
+                <div class="form-group">
+                    <label for="passwordConfirm">Confirm Password</label>
+                    <%= f.password_field(:password_confirmation, class: "form-control", id: "passwordConfirm", placeholder: "Retype password")%>
+                </div>
+
+                <%= f.submit("Update User", class: "btn btn-primary pull-right") %>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-      <label for="last">Last Name</label>
-      <%= f.text_field(:last_name, class: "form-control", id: "last", placeholder: "Ex. Gilley")%>
-    </div>
-
-    <div class="form-group">
-      <label for="username">Username</label>
-      <%= f.text_field(:username, class: "form-control", id: "username", placeholder: "Ex. EGilley1")%>
-    </div>
-
-    <div class="form-group">
-      <label for="email">Email Address</label>
-      <%= f.text_field(:email, class: "form-control", id: "email", placeholder: "Ex. egilley@gmail.com")%>
-    </div>
-
-    <div class="form-group">
-      <label for="password">Password</label>
-      <%= f.password_field(:password, class: "form-control", id: "password", placeholder: "Password")%>
-    </div>
-
-    <div class="form-group">
-      <label for="passwordConfirm">Confirm Password</label>
-      <%= f.password_field(:password_confirmation, class: "form-control", id: "passwordConfirm", placeholder: "Retype password")%>
-    </div>
-
-    <%= f.submit("Update User", class: "btn btn-default pull-right") %>
-  <% end %>
+    <% end %>
 </div>

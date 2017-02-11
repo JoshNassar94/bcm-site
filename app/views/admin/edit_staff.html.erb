@@ -1,25 +1,31 @@
 <div class="container add-small-group-form">
-  <h1>Update Staff Member</h1>
+    <h1>Update Staff Member</h1>
 
-  <%= form_for @staff, url: "/admin/update_staff?id="+@staff.id.to_s, html: {method: :patch} do |f| %>
-    <div class="form-group">
-      <label for="title">Name</label>
-      <%= f.text_field(:name, class: "form-control", id: "title", placeholder: "Ex. Eddie Gilley")%>
+    <%= form_for @staff, url: "/admin/update_staff?id="+@staff.id.to_s, html: {method: :patch} do |f| %>
+    <div class="row">
+        <div class=" col-xs-6 col-xs-offset-3 panel">
+            <div style="padding: 15px; color: black;">
+                <div class="form-group">
+                    <label for="title">Name</label>
+                    <%= f.text_field(:name, class: "form-control", id: "title", placeholder: "Ex. Eddie Gilley")%>
+                </div>
+
+                <div class="form-group">
+                    <!--Text area desc-->
+                    <label for="description">Bio</label>
+                    <%= f.text_area(:bio, class: "form-control", id:"description", rows: "6", placeholder: "Tell us about the staff member!") %>
+                </div>
+
+                <div class="form-group">
+                    <!--Image-->
+                    <label>Picture</label>
+                    <%= f.file_field("uploaded_file") %>
+                    <small id="imageHelp" class="form-text">JPG, PNG, GIF</small>
+                </div>
+
+                <%= f.submit("Update Staff Member", class: "btn btn-primary pull-right") %>
+            </div>
+        </div>
     </div>
-
-    <div class="form-group">
-        <!--Text area desc-->
-        <label for="description">Bio</label>
-        <%= f.text_area(:bio, class: "form-control", id:"description", rows: "6", placeholder: "Tell us about the staff member!") %>
-    </div>
-
-    <div class="form-group">
-        <!--Image-->
-        <label>Picture</label>
-        <%= f.file_field("uploaded_file") %>
-        <small id="imageHelp" class="form-text">JPG, PNG, GIF</small>
-    </div>
-
-    <%= f.submit("Update Staff Member", class: "btn btn-default pull-right") %>
-  <% end %>
+    <% end %>
 </div>
