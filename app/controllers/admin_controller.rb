@@ -46,6 +46,7 @@ protect_from_forgery with: :null_session
     @small_group = SmallGroup.new(small_group_params)
 
     if @small_group.save
+      flash[:success] = "Created a new small group"
       redirect_to("/get_involved/small_groups")
     else
       render("small_groups")
@@ -90,6 +91,7 @@ protect_from_forgery with: :null_session
     @event = Event.new(event_params)
 
     if @event.save
+      flash[:success] = "Created a new event"
       redirect_to("/get_involved/upcoming_events")
     else
       render("events")
@@ -133,6 +135,7 @@ protect_from_forgery with: :null_session
     @staff = StaffMember.new(staff_params)
 
     if @staff.save
+      flash[:success] = "Created a new staff member"
       redirect_to("/about_us/our_team")
     else
       render("staff")
@@ -177,6 +180,7 @@ protect_from_forgery with: :null_session
     @church = Church.new(church_params)
 
     if @church.save
+      flash[:success] = "Created a new church"
       redirect_to("/get_involved/local_churches")
     else
       render("churches")
@@ -218,6 +222,7 @@ protect_from_forgery with: :null_session
     @user = User.new(user_params)
 
     if @user.save
+      flash[:success] = "Created a new admin user"
       redirect_to("/admin/admin_users")
     else
       render("user")
