@@ -77,7 +77,7 @@
     <div class="event-area">
       <h1 id="upcoming-events">Upcoming Events</h1>
       <div class="row">
-        <% @events = Event.order(:event_date) %>
+        <% @events = Event.where(['event_date > ?', DateTime.now]).order(:event_date) %>
         <% if @events.present? %>
           <% @events.each do |sm| %>
             <div class="col-lg-4 col-sm-6 small-group-cards">
