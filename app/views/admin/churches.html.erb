@@ -3,29 +3,35 @@
 
     <%= form_for@church, url: "/admin/add_church", html: {method: :post} do |f| %>
     <%= error_messages_for(f.object) %>
-    <div class="form-group">
-        <label for="name">Church Name</label>
-        <%= f.text_field(:name, class: "form-control", id: "name", placeholder: "Ex. Bridgetown: A Jesus Church")%>
-    </div>
+    <div class="row">
+        <div class=" col-xs-6 col-xs-offset-3 panel">
+            <div style="padding: 15px; color: black;">
+                <div class="form-group">
+                    <label for="name">Church Name</label>
+                    <%= f.text_field(:name, class: "form-control", id: "name", placeholder: "Ex. Bridgetown: A Jesus Church")%>
+                </div>
 
-    <div class="form-group">
-        <!--Text area desc-->
-        <label for="description">Church Description</label>
-        <%= f.text_area(:description, class: "form-control", id:"description", rows: "6", placeholder: "Write a quick paragraph explaining who the leaders are, what the church is like, etc.") %>
-    </div>
+                <div class="form-group">
+                    <!--Text area desc-->
+                    <label for="description">Church Description</label>
+                    <%= f.text_area(:description, class: "form-control", id:"description", rows: "6", placeholder: "Write a quick paragraph explaining who the leaders are, what the church is like, etc.") %>
+                </div>
 
-    <div class="form-group">
-        <!--Text area desc-->
-        <label for="address">Church Description</label>
-        <%= f.text_area(:address, class: "form-control", id:"address", rows: "3", placeholder: "Address of the church") %>
-    </div>
+                <div class="form-group">
+                    <!--Text area desc-->
+                    <label for="address">Church Description</label>
+                    <%= f.text_area(:address, class: "form-control", id:"address", rows: "3", placeholder: "Address of the church") %>
+                </div>
 
-    <div class="form-group">
-        <!--Text field location-->
-        <label for="website">Church Website</label>
-        <%= f.text_field(:website, class: "form-control", id: "website", placeholder: "Ex. www.ufbcm.org")%>
-    </div>
+                <div class="form-group">
+                    <!--Text field location-->
+                    <label for="website">Church Website</label>
+                    <%= f.text_field(:website, class: "form-control", id: "website", placeholder: "Ex. www.ufbcm.org")%>
+                </div>
 
-    <%= f.submit("Add Church", class: "btn btn-default pull-right") %>
+                <%= f.submit("Add Church", class: "btn btn-primary pull-right") %>
+            </div>
+        </div>
+    </div>
     <% end %>
 </div>

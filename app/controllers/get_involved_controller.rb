@@ -1,6 +1,6 @@
 class GetInvolvedController < ApplicationController
   def upcoming_events
-    @events = Event.order(:event_date)
+    @events = Event.where(['event_date > ?', DateTime.now]).order(:event_date)
   end
 
   def weekly_gatherings
