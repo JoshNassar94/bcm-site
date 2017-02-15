@@ -19,7 +19,7 @@
             <% end %>
             <div class="panel-heading">
               <h3> <%=sm.title%></h3>
-              <h5><%=sm.event_date.to_date.strftime("%A, %B %d - %I:%M")%></h5>
+              <h5><%=sm.event_date.strftime("%A, %B %d - %I:%M %p")%></h5>
               <h5><%=sm.location%></h5>
 
               <% if session[:user_id].present? %>
