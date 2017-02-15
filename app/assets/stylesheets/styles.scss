@@ -7,12 +7,17 @@ $blue-main: #0288D1;
 $blue-secondary: #4bbefc;
 $orange-main: #FF9800;
 
+html {
+  height: 100%;
+}
+
 body {
   background: $blue-main;
   background: -webkit-linear-gradient($blue-main, $blue-secondary);
   background: -o-linear-gradient($blue-main, $blue-secondary);
   background: -moz-linear-gradient($blue-main, $blue-secondary);
   background: linear-gradient($blue-main, $blue-secondary);
+  background-image: linear-gradient(to top, $blue-secondary, $blue-main);
   color: white;
 }
 
@@ -109,6 +114,7 @@ z-index: 20;
   background: -o-linear-gradient($blue-main, $blue-secondary);
   background: -moz-linear-gradient($blue-main, $blue-secondary);
   background: linear-gradient($blue-main, $blue-secondary);
+  background-image: linear-gradient(to top, $blue-secondary, $blue-main);
   z-index: 50;
   position:relative;
 }
