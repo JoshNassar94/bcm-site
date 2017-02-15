@@ -3,6 +3,12 @@
   <h1>Local Churches</h1>
   <p>The BCM makes a very strong point to partner with local churches in order to help students get involved there. We believe that getting students connected to a multi-generational church is crucial to their spiritual growth. Listed below are a few that we specifically partner with in the area, though there are plenty of other great ones out there! Come by the BCM and talk to any of our staff members if you need help picking the right church for you.</p>
 
+  <% if session[:user_id].present? %>
+    <a href="/admin/churches">
+      <button class="btn btn-success btn-lg">Add Church</button>
+    </a>
+  <% end %>
+
   <div class="row">
     <% if @churches.present? %>
       <% @churches.each do |sm| %>

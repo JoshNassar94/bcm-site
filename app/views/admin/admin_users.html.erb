@@ -1,4 +1,11 @@
 <div class="container">
+
+  <% if session[:user_id].present? %>
+    <a href="/admin/user">
+      <button class="btn btn-success btn-lg">Create Admin</button>
+    </a>
+  <% end %>
+
   <div class="row">
     <div class="list-group col-xs-6 col-xs-offset-3">
       <h1>Admin Users</h1>

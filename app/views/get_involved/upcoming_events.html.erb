@@ -3,6 +3,12 @@
   <h1>Upcoming Events</h1>
   <p>The BCM holds all kinds of events throughout the year, ranging from free feasts to dodgeball tournaments! These events are great opportunities to invite your other friends to the BCM, or to get connected with some new people within our organization. Most events are free, or close to it, so try to come out to as many as you can. We promise you'll have a blast!</p>
 
+  <% if session[:user_id].present? %>
+    <a href="/admin/events">
+      <button class="btn btn-success btn-lg">Add Event</button>
+    </a>
+  <% end %>
+
   <div class="row">
     <% if @events.present? %>
       <% @events.each do |sm| %>
