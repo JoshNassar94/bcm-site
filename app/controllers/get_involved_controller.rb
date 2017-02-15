@@ -28,4 +28,42 @@ class GetInvolvedController < ApplicationController
     @event = Event.find(params[:id])
     send_data(@event.imageData, filename: @event.imageName, disposition: "inline")
   end
+
+  def bistro_menu
+    @menu = Menu.new
+    @menus = Menu.order(:event_date).reverse_order
+  end
+
+  def add_bistro_menu
+    authenticate_user
+    @menu = Menu.new(menu_params)
+
+    if @menu.save
+      flash[:success] = "Added a new menu"
+      redirect_to("/get_involved/bistro_menu")
+    else
+      render("bistro_menu")
+    end
+  end
+
+  def destroy_menu
+    authenticate_user
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    flash[:danger] = "Deleted menu"
+    redirect_to("/get_involved/bistro_menu")
+  end
+
+  private
+
+  def menu_params
+    params.require(:menu).permit(:menu, :event_date)
+  end
+
+  def authenticate_user
+    if !session[:user_id].present?
+      redirect_to('/admin/login')
+    end
+  end
+
 end

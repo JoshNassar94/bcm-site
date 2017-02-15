@@ -1,0 +1,49 @@
+<div class="container">
+
+    <% if session[:user_id].present? %>
+    <%= form_for @menu, url: "/get_involved/add_bistro_menu", html: {method: :post} do |f| %>
+    <%= error_messages_for(f.object) %>
+    <br><br>
+    <div class="row">
+        <div class=" col-xs-6 col-xs-offset-3 panel">
+            <div style="padding: 15px; color: black;">
+                <div class="form-group">
+                    <label for="menu" autofocus>Menu</label>
+                    <%= f.text_area(:menu, class: "form-control", id: "menu", placeholder: "Ex. Cheesey chicken casserole, green benas, brownies")%>
+                </div>
+
+                <div class="form-group" style="color:black;">
+                    <!--Text field time-->
+                    <label for="date">Date</label>
+                    <%= f.date_select( :event_date, :class => "form-control", :id => "menu")%>
+                </div>
+
+                <%= f.submit("Add Menu", class: "btn btn-primary pull-right") %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+
+    <% if @menus.present? %>
+    <div class="row">
+        <div class="list-group col-xs-6 col-xs-offset-3">
+            <h1>Bistro Menus</h1>
+            <% @menus.each do |sm| %>
+
+            <div class="list-group-item list-group-item-action" style="color:black; text-align:left;">
+              <p>
+                <%= sm.menu %>
+              </p>
+              <small><%= sm.event_date.strftime("%B %d, %Y") %></small>
+              <% if session[:user_id].present? %>
+                <%= link_to "", "/get_involved/destroy_menu?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash pull-right", :style => "color:black; text-decoration:none;", :method => :delete}%>
+              <% end %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+<% else %>
+    <h1 style="padding-top: 35px;">No Bistro menus have been added yet.</h1>
+    <% end %>
+</div>
