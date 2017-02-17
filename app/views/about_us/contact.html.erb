@@ -1,30 +1,41 @@
 <% @title="Contact Us" %>
 <% @description="The UF BCM offices can be reached by phone, email, or physically visiting our building. The information for all of this is listed below." %>
 <div class="container">
-  <h1>Contact Us</h1>
-  <div class="row">
-    <div class="col-sm-4 col-xs-12 icon-row">
-      <div class="glyphicon-ring">
-        <i class="fa fa-phone glyphicon-bordered" aria-hidden="true"></i>
-      </div>
-      <p style="padding-top:10px;">(352) 376-4405</p>
-    </div>
+    <h1>Contact Us</h1>
+    <div class="row">
+        <div class="col-sm-4 col-xs-12 icon-row">
+            <div class="glyphicon-ring">
+                <i class="fa fa-phone glyphicon-bordered" aria-hidden="true"></i>
+            </div>
+            <div itemscope itemtype="http://schema.org/LocalBusiness" style="padding-top:10px;">
+                Phone:
+                <span itemprop="telephone">352-376-4405</span>
+            </div>
+        </div>
 
-    <div class="col-sm-4 col-xs-12 icon-row">
-      <div class="glyphicon-ring">
-        <i class="fa fa-map-marker glyphicon-bordered" aria-hidden="true"></i>
-      </div>
-      <a target="_blank" href="https://goo.gl/knW7t6">
-        <p style="padding-top:10px;">1604 W. University Ave.</p>
-        <p>Gainesville, Fl 32603</p>
-      </a>
-    </div>
+        <div class="col-sm-4 col-xs-12 icon-row">
+            <div class="glyphicon-ring">
+                <i class="fa fa-map-marker glyphicon-bordered" aria-hidden="true"></i>
+            </div>
+            <a target="_blank" href="https://goo.gl/knW7t6">
+                <div itemscope itemtype="http://schema.org/PostalAddress" style="padding-top:10px;">
+                    <span itemprop="name">Baptist Collegiate Ministry</span><br>
+                    <span itemprop="streetAddress">1604 W University Ave</span><br>
+                    <span itemprop="addressLocality">Gainesville</span>,
+                    <span itemprop="addressRegion">Florida</span>
+                    <span itemprop="postalCode">32603</span><br>
+                    <span itemprop="addressCountry">United States</span>
+                </div>
+            </a>
+        </div>
 
-    <div class="col-sm-4 col-xs-12 icon-row">
-      <div class="glyphicon-ring">
-        <i class="fa fa-envelope glyphicon-bordered" aria-hidden="true"></i>
-      </div>
-      <p style="padding-top:10px;"><a href="mailto:ufbcm@ufbcm.org" target="_top">ufbcm@ufbcm.org</a></p>
+        <div class="col-sm-4 col-xs-12 icon-row">
+            <div class="glyphicon-ring">
+                <i class="fa fa-envelope glyphicon-bordered" aria-hidden="true"></i>
+            </div>
+            <p style="padding-top:10px;">
+                <a href="mailto:ufbcm@ufbcm.org" target="_top">ufbcm@ufbcm.org</a>
+            </p>
+        </div>
     </div>
-  </div>
 </div>
