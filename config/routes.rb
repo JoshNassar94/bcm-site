@@ -11,13 +11,13 @@ Rails.application.routes.draw do
   get 'get_involved/show_staff_image'
   get 'get_involved/show_small_group_image'
   get 'get_involved/show_event_image'
-  get 'get_involved/bistro_menu'
   post 'get_involved/add_bistro_menu'
   delete 'get_involved/destroy_menu'
 
   get 'resources/newsletter'
   get 'resources/sermon_notes'
   get 'resources/testimonies'
+  get 'resources/bistro_menu'
 
   get 'about_us/our_team'
   get 'about_us/our_mission'

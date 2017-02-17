@@ -29,20 +29,15 @@ class GetInvolvedController < ApplicationController
     send_data(@event.imageData, filename: @event.imageName, disposition: "inline")
   end
 
-  def bistro_menu
-    @menu = Menu.new
-    @menus = Menu.order(:event_date).reverse_order
-  end
-
   def add_bistro_menu
     authenticate_user
     @menu = Menu.new(menu_params)
 
     if @menu.save
       flash[:success] = "Added a new menu"
-      redirect_to("/get_involved/bistro_menu")
+      redirect_to("/resources/bistro_menu")
     else
-      render("bistro_menu")
+      render("/resources/bistro_menu")
     end
   end
 
@@ -51,7 +46,7 @@ class GetInvolvedController < ApplicationController
     @menu = Menu.find(params[:id])
     @menu.destroy
     flash[:danger] = "Deleted menu"
-    redirect_to("/get_involved/bistro_menu")
+    redirect_to("/resources/bistro_menu")
   end
 
   private
