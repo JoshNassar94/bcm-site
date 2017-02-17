@@ -19,8 +19,16 @@ body {
 }
 
 .footer {
-  background-color: grey;
+  background-color: #f8f8f8;
+  color: #777;
   text-align: center;
+}
+
+.footer a {
+  color: #777;
+  font-weight: normal;
+  text-decoration: none;
+  font-weight: bold;
 }
 
 .navbar {
