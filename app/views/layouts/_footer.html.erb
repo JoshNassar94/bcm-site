@@ -51,7 +51,11 @@
             </div>
           </div><br>
             <div style="text-align:center;padding-bottom:25px;">
-              <small>  &copy; 2017 - <%= Time.new.year %> UF BCM. All Rights Reserved.</small><br>
+              <small>  &copy; 2017
+                <% if !Time.new.year.to_s.eql? "2017" %>
+                - <%= Time.new.year %>
+                <% end %>
+                UF BCM. All Rights Reserved.</small><br>
               <small>Site designed and created by <%= link_to "Josh Nassar", "http://www.joshuanassar.com" %></small>
             </div>
 
