@@ -17,7 +17,7 @@ class AboutUsController < ApplicationController
       ContactMailer.contact_email(@message).deliver
       @messageSent = true
       flash[:success] = "Thanks for sending us a message! We'll get back to you soon!"
-      redirect_to root_path
+      redirect_to('contact')
     else
       @messageSent = false
       flash.now[:danger] = "Please make sure to fill out all fields!"
