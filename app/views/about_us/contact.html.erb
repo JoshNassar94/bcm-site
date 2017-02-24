@@ -1,8 +1,8 @@
 <% @title="Contact Us" %>
 <% @description="The UF BCM offices can be reached by phone, email, or physically visiting our building. The information for all of this is listed below." %>
 <div class="container">
-    <h1>Contact Us</h1>
-    <div class="row">
+
+    <div class="row" style="display:none;">
         <div class="col-sm-4 col-xs-12 icon-row">
             <div class="glyphicon-ring">
                 <i class="fa fa-phone glyphicon-bordered" aria-hidden="true"></i>
@@ -38,4 +38,55 @@
             </p>
         </div>
     </div>
+
+
+    <div class="row">
+      <div class="col-sm-5">
+        <h1>Contact Us</h1>
+        <p>Please fill out the short form and we'll contact you as soon as we can!</p>
+        <%= form_for @message, url: '/main/sendEmail' do |message_form| %>
+          <div class="panel" style="padding-bottom:15px;">
+            <div style="padding: 15px; color: black;">
+              <div class="form-group required">
+                <%= message_form.text_field(:name, class: "form-control", id: "name", placeholder: "Name")%>
+              </div>
+
+              <div class="form-group required">
+                <%= message_form.email_field(:email, class: "form-control", id: "email", placeholder: "Your email address")%>
+              </div>
+
+              <div class="form-group required">
+                <%= message_form.text_area(:content, class: "form-control", id: "content", rows:"6", placeholder: "Message")%>
+              </div>
+
+              <%= message_form.submit("SUBMIT", class: "btn btn-primary") %>
+            </div>
+          </div>
+        <% end %>
+      </div>
+      <div class="col-sm-5 col-sm-offset-2">
+        <div class="email-section">
+          <h3>Connect with us:</h3>
+          <p>For any questions about who we are, what we do, or what we believe:</p>
+          <p>Email us at <a href="mailto:ufbcm@ufbcm.org" target="_top">ufbcm@ufbcm.org</a></p>
+        </div>
+        <div class="address-section">
+          <div itemscope itemtype="http://schema.org/PostalAddress" style="padding-top:10px;">
+            <a target="_blank" href="https://goo.gl/knW7t6" style="text-decoration: none;">
+              <span itemprop="name">Baptist Collegiate Ministry</span><br>
+            </a>
+            <span itemprop="streetAddress">1604 W University Ave</span><br>
+            <span itemprop="addressLocality">Gainesville</span>,
+            <span itemprop="addressRegion">Florida</span>
+            <span itemprop="postalCode">32603</span><br>
+            <span itemprop="addressCountry">United States</span>
+          </div>
+          <br>
+          <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3467.320835124313!2d-82.34567658442649!3d29.65246298202665!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88e8a38244aaf2e9%3A0x85ddfda498f35e69!2sBaptist+Collegiate+Ministries!5e0!3m2!1sen!2sus!4v1487899025279" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+
+
+
 </div>

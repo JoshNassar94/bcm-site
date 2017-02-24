@@ -22,6 +22,7 @@ Rails.application.routes.draw do
   get 'about_us/our_team'
   get 'about_us/our_mission'
   get 'about_us/contact'
+  post 'about_us/sendEmail'
 
   post 'admin/attempt_login'
   get 'admin/login'
