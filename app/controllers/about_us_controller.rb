@@ -17,11 +17,11 @@ class AboutUsController < ApplicationController
       ContactMailer.contact_email(@message).deliver
       @messageSent = true
       flash[:success] = "Thanks for sending us a message! We'll get back to you soon!"
-      redirect_to('contact')
+      redirect_to('/about_us/contact')
     else
       @messageSent = false
       flash.now[:danger] = "Please make sure to fill out all fields!"
-      render('contact')
+      render('/about_us/contact')
     end
   end
 
