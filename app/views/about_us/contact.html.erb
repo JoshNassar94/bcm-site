@@ -5,25 +5,23 @@
         <div class="col-sm-5">
             <h1>Contact Us</h1>
             <p>Please fill out the short form and we'll contact you as soon as we can!</p>
-            <%= form_for @message, url: '/about_us/sendEmail' do |message_form| %>
-            <div class="panel" style="padding-bottom:15px;">
-                <div style="padding: 15px; color: black;">
-                    <div class="form-group required">
-                        <%= message_form.text_field(:name, class: "form-control", id: "name", placeholder: "Name")%>
-                    </div>
-
-                    <div class="form-group required">
-                        <%= message_form.email_field(:email, class: "form-control", id: "email", placeholder: "Your email address")%>
-                    </div>
-
-                    <div class="form-group required">
-                        <%= message_form.text_area(:content, class: "form-control", id: "content", rows:"6", placeholder: "Message")%>
-                    </div>
-
-                    <%= message_form.submit("SUBMIT", class: "btn btn-primary") %>
+            <form action="https://formspree.io/uf.bcm.site@gmail.com" method="POST" role="form">
+              <div style="padding: 15px; color: grey;">
+                <div class="form-group required">
+                  <input type="text" class="form-control" name="name" id="name" placeholder="Name">
                 </div>
-            </div>
-            <% end %>
+
+                <div class="form-group required">
+                  <input type="email" class="form-control" name="_replyto" id="email" placeholder="Enter your email">
+                </div>
+
+                <div class="form-group required">
+                  <textarea class="form-control" name="message" id="message" placeholder="Message" rows="8"></textarea>
+                </div>
+
+                <button type="submit" value="Send" class="btn btn-primary">Submit</button>
+              </div>
+            </form>
         </div>
         <div class="col-sm-5 col-sm-offset-2">
             <div class="email-section">
