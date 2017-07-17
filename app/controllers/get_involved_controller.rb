@@ -1,7 +1,4 @@
 class GetInvolvedController < ApplicationController
-  def upcoming_events
-    @events = Event.where(['event_date > ?', DateTime.now]).order(:event_date)
-  end
 
   def weekly_gatherings
   end
@@ -22,11 +19,6 @@ class GetInvolvedController < ApplicationController
   def show_small_group_image
     @small_group = SmallGroup.find(params[:id])
     send_data(@small_group.imageData, filename: @small_group.imageName, disposition: "inline")
-  end
-
-  def show_event_image
-    @event = Event.find(params[:id])
-    send_data(@event.imageData, filename: @event.imageName, disposition: "inline")
   end
 
   def add_bistro_menu
@@ -50,10 +42,6 @@ class GetInvolvedController < ApplicationController
   end
 
   private
-
-  def menu_params
-    params.require(:menu).permit(:menu, :event_date)
-  end
 
   def authenticate_user
     if !session[:user_id].present?
