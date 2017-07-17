@@ -74,48 +74,5 @@
       </div>
     </div>
 
-    <hr>
-
-    <div class="event-area">
-      <h1 id="upcoming-events">Upcoming Events</h1>
-      <div class="row">
-        <% @events = Event.where(['event_date > ?', DateTime.now]).order(:event_date) %>
-        <% if @events.present? %>
-          <% @events.each do |sm| %>
-            <div class="col-lg-4 col-sm-6 small-group-cards">
-              <div class="panel panel-default">
-                <% if sm.imageName && sm.imageData %>
-                  <img src="<%=url_for(:controller => 'get_involved', :action => 'show_event_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
-                <% end %>
-                <div class="panel-heading">
-                  <h3> <%=sm.title%></h3>
-                  <h5><%=sm.event_date.strftime("%A, %B %d - %I:%M %p")%></h5>
-                  <h5><%=sm.location%></h5>
-
-                  <% if session[:user_id].present? %>
-                  <div class="admin-section row">
-                    <hr>
-                    <div class="col-xs-2 col-xs-offset-8 h3">
-                      <%= link_to "", "/admin/edit_event?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
-                    </div>
-                    <div class="col-xs-2 h3">
-                      <%= link_to "", "/admin/destroy_event?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
-                    </div>
-                  </div>
-                  <% end %>
-                </div>
-                <div class="panel-body">
-                  <p><%=sm.description=%></p>
-                </div>
-              </div>
-            </div>
-          <% end %>
-        <% else %>
-          <div class="container">
-            <h3 style="padding-top: 35px;">No events have been posted recently.</h3>
-          </div>
-        <% end %>
-      </div>
-    </div>
   </div>
 </div>
