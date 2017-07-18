@@ -1,6 +1,6 @@
-<% @title="Edit Small Group" %>
+<% @title="Edit Connection Group" %>
 <div class="container add-small-group-form">
-    <h1>Edit Small Group</h1>
+    <h1>Edit Connection Group</h1>
 
     <%= form_for@small_group, url: "/admin/update_small_group?id="+@small_group.id.to_s, html: {method: :patch} do |f| %>
     <%= error_messages_for(f.object) %>
@@ -50,7 +50,7 @@
                     <small id="imageHelp" class="form-text">JPG, PNG, GIF</small>
                 </div>
 
-                <%= f.submit("Update Small Group", class: "btn btn-primary pull-right") %>
+                <%= f.submit("Update Connection Group", class: "btn btn-primary pull-right") %>
             </div>
         </div>
     </div>
