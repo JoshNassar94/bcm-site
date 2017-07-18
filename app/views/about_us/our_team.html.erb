@@ -14,9 +14,10 @@
 
 
 
-  <% if @staff.present? %>
-    <% @staff.each do |sm| %>
-      <div class="row">
+
+    <% if @staff.present? %>
+      <% @staff.each do |sm| %>
+        <div class="row">
         <div class="col-sm-4">
           <% if sm.imageName && sm.imageData %>
             <img src="<%=url_for(:controller => 'get_involved', :action => 'show_staff_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
@@ -44,10 +45,9 @@
           </div>
           <% end %>
         </div>
+      </div>
       <% end %>
-    </div>
-    <br><hr><br>
-  <% else %>
+    <% else %>
       <h1 style="padding-top: 35px;">No team members have been added!</h1>
-  <% end %>
+    <% end %>
 </div>
