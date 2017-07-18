@@ -49,43 +49,5 @@
       <h1 style="padding-top: 35px;">No team members have been added!</h1>
     <% end %>
   </div>
-
-
-
-
-
-
-  <div class="row">
-    <% if @staff.present? %>
-      <% @staff.each do |sm| %>
-        <div class="col-lg-4 col-sm-6 small-group-cards">
-          <div class="panel panel-default">
-            <% if sm.imageName && sm.imageData %>
-              <img src="<%=url_for(:controller => 'get_involved', :action => 'show_staff_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
-            <% end %>
-            <div class="panel-heading">
-              <h3> <%=sm.name%></h3>
-
-              <% if session[:user_id].present? %>
-              <div class="admin-section row">
-                <hr>
-                <div class="col-xs-2 col-xs-offset-8 h3">
-                  <%= link_to "", "/admin/edit_staff?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
-                </div>
-                <div class="col-xs-2 h3">
-                  <%= link_to "", "/admin/destroy_staff?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
-                </div>
-              </div>
-              <% end %>
-            </div>
-            <div class="panel-body">
-              <p><%=sm.bio=%></p>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% else %>
-      <h1 style="padding-top: 35px;">No team members have been added!</h1>
-    <% end %>
-  </div>
+  <br><hr><br>
 </div>
