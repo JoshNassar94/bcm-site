@@ -4,7 +4,7 @@
 
 
 $blue-main: #0288D1;
-$orange-main: #FF9800;
+$orange-main: #ffc266;
 
 
 body {
@@ -13,7 +13,7 @@ body {
 }
 
 .footer {
-  background-color: #1a1a1a;
+  background-color: #333333;
   color: #d9d9d9;
   text-align: center;
 }
@@ -36,6 +36,7 @@ body {
   display: inline-table;
   text-align: center;
   background: $orange-main;
+  color: white;
 }
 
 .glyphicon-ring .glyphicon-bordered {
