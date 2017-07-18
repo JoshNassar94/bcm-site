@@ -14,12 +14,6 @@
                 </div>
 
                 <div class="form-group">
-                    <!--Dropdown group type-->
-                    <label for="group_type">Type of Group</label>
-                    <%= f.select(:group_type, ['Community Group', 'Fish School'], {}, {class: "form-control", id: "group_type"}) %>
-                </div>
-
-                <div class="form-group">
                     <!--Text area desc-->
                     <label for="description">Group Description</label>
                     <%= f.text_area(:description, class: "form-control", id:"description", rows: "6", placeholder: "Write a quick paragraph explaining who the leaders are, what the goal of the group is, what they're excited about, etc.") %>
