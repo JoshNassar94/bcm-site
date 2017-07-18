@@ -18,13 +18,14 @@
     <% if @staff.present? %>
       <% @staff.each do |sm| %>
         <div class="row">
+        <div class="col-sm-1"></div>
         <div class="col-sm-4">
           <% if sm.imageName && sm.imageData %>
             <img src="<%=url_for(:controller => 'get_involved', :action => 'show_staff_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
           <% end %>
         </div>
 
-        <div class="col-sm-8">
+        <div class="col-sm-6">
           <div class="panel-heading">
             <h2> <%=sm.name%></h2>
           </div>
@@ -45,8 +46,9 @@
           </div>
           <% end %>
         </div>
+        <div class="col-sm-1"></div>
       </div>
-      <br><br><hr><br><br>
+      <br><br><hr style="height:1px;border:none;color:#333;background-color:#333;"/><br><br>
       <% end %>
     <% else %>
       <h1 style="padding-top: 35px;">No team members have been added!</h1>
