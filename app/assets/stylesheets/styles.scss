@@ -4,7 +4,6 @@
 
 
 $blue-main: #0288D1;
-$blue-secondary: #4bbefc;
 $orange-main: #FF9800;
 
 
@@ -14,7 +13,7 @@ body {
 }
 
 .footer {
-  background-color: #4d4d4d;
+  background-color: #1a1a1a;
   color: #d9d9d9;
   text-align: center;
 }
@@ -109,12 +108,7 @@ z-index: 20;
 }
 
 .main-page {
-  background: $blue-main;
-  background: -webkit-linear-gradient($blue-main, $blue-secondary);
-  background: -o-linear-gradient($blue-main, $blue-secondary);
-  background: -moz-linear-gradient($blue-main, $blue-secondary);
-  background: linear-gradient($blue-main, $blue-secondary);
-  background-image: linear-gradient(to top, $blue-secondary, $blue-main);
+  background: white;
   z-index: 50;
   position:relative;
 }
