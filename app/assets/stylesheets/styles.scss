@@ -80,13 +80,13 @@ display: block;
 }
 
 a {
-  color: white;
+  color: $orange-main;
   font-weight: bold;
   text-decoration: underline;
 }
 
 a:hover {
-  color: $orange-main;
+  color: $blue-main;
 }
 
 .carousel-overlay{

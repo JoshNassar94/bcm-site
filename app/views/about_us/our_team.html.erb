@@ -16,7 +16,7 @@
 
 
     <% if @staff.present? %>
-      <% @staff.each do |sm| %>
+      <% @staff.each do |sm, index| %>
         <div class="row">
         <div class="col-sm-1"></div>
         <div class="col-sm-4">
@@ -48,7 +48,9 @@
         </div>
         <div class="col-sm-1"></div>
       </div>
-      <br><br><hr style="height:1px;border:none;color:#333;background-color:#333;"/><br><br>
+      <% if index != @staff.size - 1 %>
+        <br><br><hr style="height:1px;border:none;color:#333;background-color:#333;"/><br><br>
+      <% end %>
       <% end %>
     <% else %>
       <h1 style="padding-top: 35px;">No team members have been added!</h1>
