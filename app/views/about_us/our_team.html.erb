@@ -5,15 +5,13 @@
   <h1>Our Team</h1>
   <p>The BCM would not be able to function without our amazing team of staff and ministry partners! These wonderful people are the ones who make it possible for the BCM to continue shining a light on the University of Florida campus. Read about them online and come on over to our building to get to know them in person!</p>
 
+  <br><br>
+
   <% if session[:user_id].present? %>
     <a href="/admin/staff">
       <button class="btn btn-success btn-lg">Add Staff Member</button>
     </a>
   <% end %>
-
-
-
-
 
     <% if @staff.present? %>
       <% @staff.each do |sm| %>
@@ -55,4 +53,6 @@
     <% else %>
       <h1 style="padding-top: 35px;">No team members have been added!</h1>
     <% end %>
+
+    <br><br><br>
 </div>
