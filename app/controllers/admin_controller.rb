@@ -36,93 +36,6 @@ protect_from_forgery with: :null_session
     @users = User.order(:id)
   end
 
-  def small_groups
-    authenticate_user
-    @small_group = SmallGroup.new
-  end
-
-  def add_small_group
-    authenticate_user
-    @small_group = SmallGroup.new(small_group_params)
-
-    if @small_group.save
-      flash[:success] = "Created a new small group"
-      redirect_to("/get_involved/small_groups")
-    else
-      render("small_groups")
-    end
-  end
-
-  def edit_small_group
-    authenticate_user
-    @small_group = SmallGroup.find(params[:id])
-  end
-
-  def update_small_group
-    authenticate_user
-    @small_group = SmallGroup.find(params[:id])
-
-    if @small_group.update_attributes(small_group_params)
-      redirect_to("/get_involved/small_groups")
-    else
-      render("edit_small_group")
-    end
-  end
-
-  def destroy_small_group
-    authenticate_user
-    @small_group = SmallGroup.find(params[:id])
-    @small_group.destroy
-    redirect_to("/get_involved/small_groups")
-  end
-
-
-
-
-
-
-  def events
-    authenticate_user
-    @event = Event.new
-  end
-
-  def add_event
-    authenticate_user
-    @event = Event.new(event_params)
-
-    if @event.save
-      flash[:success] = "Created a new event"
-      redirect_to("/get_involved/upcoming_events")
-    else
-      render("events")
-    end
-  end
-
-  def edit_event
-    authenticate_user
-    @event = Event.find(params[:id])
-  end
-
-  def update_event
-    authenticate_user
-    @event = Event.find(params[:id])
-
-    if @event.update_attributes(event_params)
-      redirect_to("/get_involved/upcoming_events")
-    else
-      render("edit_event")
-    end
-  end
-
-  def destroy_event
-    authenticate_user
-    @event = Event.find(params[:id])
-    @event.destroy
-    redirect_to("/get_involved/upcoming_events")
-  end
-
-
-
 
 
   def staff
@@ -163,51 +76,6 @@ protect_from_forgery with: :null_session
     @staff = StaffMember.find(params[:id])
     @staff.destroy
     redirect_to("/about_us/our_team")
-  end
-
-
-
-
-
-
-  def churches
-    authenticate_user
-    @church = Church.new
-  end
-
-  def add_church
-    authenticate_user
-    @church = Church.new(church_params)
-
-    if @church.save
-      flash[:success] = "Created a new church"
-      redirect_to("/get_involved/local_churches")
-    else
-      render("churches")
-    end
-  end
-
-  def edit_church
-    authenticate_user
-    @church = Church.find(params[:id])
-  end
-
-  def update_church
-    authenticate_user
-    @church = Church.find(params[:id])
-
-    if @church.update_attributes(church_params)
-      redirect_to("/get_involved/local_churches")
-    else
-      render("edit_church")
-    end
-  end
-
-  def destroy_church
-    authenticate_user
-    @church = Church.find(params[:id])
-    @church.destroy
-    redirect_to("/get_involved/local_churches")
   end
 
 
@@ -259,20 +127,8 @@ protect_from_forgery with: :null_session
 
   private
 
-  def small_group_params
-    params.require(:small_group).permit(:leader1, :leader2, :group_type, :description, :location, :day, :time, :image, :uploaded_file)
-  end
-
-  def event_params
-    params.require(:event).permit(:title, :description, :location, :event_date, :image, :uploaded_file)
-  end
-
   def staff_params
     params.require(:staff_member).permit(:name, :bio, :image, :uploaded_file)
-  end
-
-  def church_params
-    params.require(:church).permit(:name, :description, :address, :website)
   end
 
   def user_params

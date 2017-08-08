@@ -3,45 +3,20 @@
 <div class="container">
 
   <h1>Connection Groups</h1>
-  <p>The BCM offers weekly small groups for all types of students called Connection Groups. Connection groups are a great way to get involved; you are certain to make some fast friends and grow closer to God throughout your time in them!</p>
-  <p>Meet our connection group leaders below!</p>
 
-  <% if session[:user_id].present? %>
-    <a href="/admin/small_groups">
-      <button class="btn btn-success btn-lg">Add Connection Group</button>
-    </a>
-  <% end %>
-
-  <div class="row">
-    <% if @small_groups.present? %>
-      <% @small_groups.each do |sm| %>
-        <div class="col-lg-4 col-sm-6 small-group-cards">
-          <div class="panel panel-default">
-            <% if sm.imageName && sm.imageData %>
-              <img src="<%=url_for(:controller => 'get_involved', :action => 'show_small_group_image', :id => sm.id)%>" class="img img-responsive" alt="Leaders" style="width: 100%;"/>
-            <% end %>
-            <div class="panel-heading">
-              <h3> <%=sm.leader1%> &amp; <%=sm.leader2%> </h3>
-              <h5><%=sm.day=%> | <%=sm.time%> | <%=sm.location%></h5>
-
-              <% if session[:user_id].present? %>
-              <div class="admin-section row">
-                <hr>
-                <div class="col-xs-2 col-xs-offset-8 h3">
-                  <%= link_to "", "/admin/edit_small_group?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
-                </div>
-                <div class="col-xs-2 h3">
-                  <%= link_to "", "/admin/destroy_small_group?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
-                </div>
-              </div>
-              <% end %>
-            </div>
-            <div class="panel-body">
-              <p><%=sm.description=%></p>
-            </div>
-          </div>
+  <div class="gator">
+    <div class="row">
+      <div class="col-sm-6">
+        <%= image_tag("connection-groups.JPG", :alt => "Our Connection Group leaders", :class => "img-responsive img-thumbnail") %>
+      </div>
+      <div class="col-sm-6">
+        <p>Our small groups are key to the BCM community. We encourage you to sign up whether you are looking for a Freshmen Connection Group or for an Upperclassmen Connection Group. Our prayer for these groups is that students will encounter Jesus, learn Biblical truth, grow in prayer, experience the joy of fellowship, and understand the fullness of introducing others to Jesus.</p>
+        <div id="connection-group-button">
+            <a href="https://docs.google.com/forms/d/1C0Uh2dovCZkGCY24ME3lVICpkrOT01UnR539Fo69hUA/viewform?edit_requested=true" target="_blank">
+                <button class="button">Join a Group</button>
+            </a>
         </div>
-      <% end %>
-    <% end %>
+      </div>
+    </div>
   </div>
 </div>
