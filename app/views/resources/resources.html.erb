@@ -1,0 +1,49 @@
+<% @title="Resources" %>
+<% @description="Here you can find all sorts of resources for students at the UF BCM." %>
+<div class="container">
+
+    <% if session[:user_id].present? %>
+    <%= form_for @resource, url: "/get_involved/add_resource", html: {method: :post} do |f| %>
+    <%= error_messages_for(f.object) %>
+    <br><br>
+    <div class="row">
+        <div class=" col-xs-6 col-xs-offset-3 panel">
+            <div style="padding: 15px; color: black;">
+                <div class="form-group">
+                    <label for="title" autofocus>Resource Title</label>
+                    <%= f.text_area(:title, class: "form-control", id: "title", placeholder: "Ex. Summer Bible Study Guide")%>
+                </div>
+                
+                <div class="form-group">
+                    <label for="hyperlink" autofocus>Resource Link</label>
+                    <%= f.text_area(:hyperlink, class: "form-control", id: "hyperlink", placeholder: "Ex. http://www.pdfs.com/summer-bible-study-guide.pdf")%>
+                </div>
+
+                <%= f.submit("Add Resource", class: "btn btn-primary pull-right") %>
+            </div>
+        </div>
+    </div>
+    <% end %>
+    <% end %>
+
+    <% if @resources.present? %>
+    <div class="row">
+        <div class="list-group col-xs-6 col-xs-offset-3">
+            <h1>Resources</h1>
+            <% @resources.each do |sm| %>
+
+            <div class="list-group-item list-group-item-action" style="color:black; text-align:center;">
+              <a href=<%= sm.hyperlink %> target="_blank">
+                <h4>
+                    <%= sm.title %>
+                </h4>
+              </a>
+              <% if session[:user_id].present? %>
+                <%= link_to "", "/get_involved/destroy_resource?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash pull-right", :style => "color:black; text-decoration:none;", :method => :delete}%>
+              <% end %>
+            </div>
+            <% end %>
+        </div>
+    </div>
+<% end %>
+</div>

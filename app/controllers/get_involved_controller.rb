@@ -8,24 +8,24 @@ class GetInvolvedController < ApplicationController
     send_data(@staff.imageData, filename: @staff.imageName, disposition: "inline")
   end
 
-  def add_bistro_menu
+  def add_resource
     authenticate_user
-    @menu = Menu.new(menu_params)
+    @resource = Resource.new(resource_params)
 
-    if @menu.save
-      flash[:success] = "Added a new menu"
-      redirect_to("/resources/bistro_menu")
+    if @resource.save
+      flash[:success] = "Added a new resource"
+      redirect_to("/resources/resources")
     else
-      render("/resources/bistro_menu")
+      render("/resources/resources")
     end
   end
 
-  def destroy_menu
+  def destroy_resource
     authenticate_user
-    @menu = Menu.find(params[:id])
-    @menu.destroy
-    flash[:danger] = "Deleted menu"
-    redirect_to("/resources/bistro_menu")
+    @resource = Resource.find(params[:id])
+    @resource.destroy
+    flash[:danger] = "Deleted resource"
+    redirect_to("/resources/resources")
   end
 
   private
@@ -34,6 +34,10 @@ class GetInvolvedController < ApplicationController
     if !session[:user_id].present?
       redirect_to('/admin/login')
     end
+  end
+
+  def resource_params
+    params.require(:resource).permit(:title, :hyperlink)
   end
 
 end

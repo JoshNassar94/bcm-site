@@ -8,8 +8,8 @@ class ResourcesController < ApplicationController
   def testimonies
   end
 
-  def bistro_menu
-    @menu = Menu.new
-    @menus = Menu.order(:event_date).reverse_order
+  def resources
+    @resource = Resource.new
+    @resources = Resource.order(:title)
   end
 end

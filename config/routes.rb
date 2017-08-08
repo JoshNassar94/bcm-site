@@ -4,20 +4,16 @@ Rails.application.routes.draw do
 
   get 'new_here', to: 'new_here#index'
 
-  get 'get_involved/upcoming_events'
   get 'get_involved/weekly_gatherings'
   get 'get_involved/small_groups'
   get 'get_involved/local_churches'
   get 'get_involved/show_staff_image'
   get 'get_involved/show_small_group_image'
   get 'get_involved/show_event_image'
-  post 'get_involved/add_bistro_menu'
-  delete 'get_involved/destroy_menu'
+  post 'get_involved/add_resource'
+  delete 'get_involved/destroy_resource'
 
-  get 'resources/newsletter'
-  get 'resources/sermon_notes'
-  get 'resources/testimonies'
-  get 'resources/bistro_menu'
+  get 'resources/resources'
 
   get 'about_us/our_team'
   get 'about_us/our_mission'
