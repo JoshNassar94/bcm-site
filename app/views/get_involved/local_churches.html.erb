@@ -2,45 +2,13 @@
 <% @description="The UF BCM partners with local churches in the area in order to help students find a body of Christ that they can get involved and grow in." %>
 <div class="container">
 
-  <h1>Local Churches</h1>
-  <p>The BCM makes a very strong point to partner with local churches in order to help students get involved there. We believe that getting students connected to a multi-generational church is crucial to their spiritual growth. Listed below are a few that we specifically partner with in the area, though there are plenty of other great ones out there! Come by the BCM and talk to any of our staff members if you need help picking the right church for you.</p>
+    <h1>Local Churches</h1>
+    <p>The BCM makes a very strong point to partner with local churches in order to help students get involved there. We believe that getting students connected to a multi-generational church is crucial to their spiritual growth. Click the button below to check out some local Baptist churches through the North Central Florida Baptist Association. If you need help finding a church, come by the BCM and talk to any of our staff members.</p>
 
-  <% if session[:user_id].present? %>
-    <a href="/admin/churches">
-      <button class="btn btn-success btn-lg">Add Church</button>
-    </a>
-  <% end %>
+    <div class="church-button">
+        <a href="http://www.ncfba.net/" target="_blank">
+            <button class="button">Find a Church</button>
+        </a>
+    </div>
 
-  <div class="row">
-    <% if @churches.present? %>
-      <% @churches.each do |sm| %>
-        <div class="col-lg-4 col-sm-6 small-group-cards">
-          <div class="panel panel-default">
-            <div class="panel-heading">
-              <h3><%=sm.name%></h3>
-              <%=link_to sm.website, "http://#{sm.website}", :class => "church-link"%>
-
-              <% if session[:user_id].present? %>
-              <div class="admin-section row">
-                <hr>
-                <div class="col-xs-2 col-xs-offset-8 h3">
-                  <%= link_to "", "/admin/edit_church?id="+sm.id.to_s, {:class => "glyphicon glyphicon-pencil"}%>
-                </div>
-                <div class="col-xs-2 h3">
-                  <%= link_to "", "/admin/destroy_church?id="+sm.id.to_s, {:class => "glyphicon glyphicon-trash", :method => :delete}%>
-                </div>
-              </div>
-              <% end %>
-            </div>
-            <div class="panel-body">
-              <p><%=sm.description=%></p>
-            </div>
-            <div class="panel-footer">
-              <h5><%=sm.address%></h5>
-            </div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
-  </div>
 </div>

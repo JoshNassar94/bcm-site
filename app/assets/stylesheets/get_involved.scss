@@ -1,3 +1,37 @@
 // Place all the styles related to the Get-Involved controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+.button {
+  background-color: rgba(255, 255, 255, 1);
+  transition: background-color .3s ease-in-out;
+  -moz-transition: background-color .3s ease-in-out;
+  -webkit-transition: background-color .3s ease-in-out;
+
+  color: black;
+  text-align: center;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-style: solid;
+  border-color: rgba(2, 136, 209, .7);
+  border-width: medium;
+  padding: 10px 20px;
+  font-size: 1.3em;
+  font-weight: normal;
+}
+
+.button:hover {
+  background-color: rgba(2, 136, 209, .7);
+  color: white
+}
+
+.button:focus {
+  outline: 0;
+}
+
+.church-button {
+    text-align: center;
+    padding-top: 5vh;
+}
