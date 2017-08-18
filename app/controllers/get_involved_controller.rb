@@ -14,9 +14,9 @@ class GetInvolvedController < ApplicationController
 
     if @resource.save
       flash[:success] = "Added a new resource"
-      redirect_to("/resources/resources")
+      redirect_to("/resources/helpful_links")
     else
-      render("/resources/resources")
+      render("/resources/helpful_links")
     end
   end
 
@@ -25,7 +25,27 @@ class GetInvolvedController < ApplicationController
     @resource = Resource.find(params[:id])
     @resource.destroy
     flash[:danger] = "Deleted resource"
-    redirect_to("/resources/resources")
+    redirect_to("/resources/helpful_links")
+  end
+    
+  def add_bistro_menu
+    authenticate_user
+    @menu = Menu.new(menu_params)
+
+    if @menu.save
+      flash[:success] = "Added a new menu"
+      redirect_to("/resources/bistro_menu")
+    else
+      render("/resources/bistro_menu")
+    end
+  end
+
+  def destroy_menu
+    authenticate_user
+    @menu = Menu.find(params[:id])
+    @menu.destroy
+    flash[:danger] = "Deleted menu"
+    redirect_to("/resources/bistro_menu")
   end
 
   private
@@ -34,6 +54,10 @@ class GetInvolvedController < ApplicationController
     if !session[:user_id].present?
       redirect_to('/admin/login')
     end
+  end
+    
+  def menu_params
+    params.require(:menu).permit(:menu, :event_date)
   end
 
   def resource_params
